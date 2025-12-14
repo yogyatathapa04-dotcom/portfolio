@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Yogyata</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f7fb;
+      --card:#ffffff;
+      --accent:#eaada4;
+      --muted:#030303;
+      --greyish:#e6e9ee;
+      --max-width:1100px;
+      --radius:12px;
+    }
+
+    *{box-sizing:border-box;}
+    html, body{
+      height:100%;
+      margin:0;
+      font-family:Inter, system-ui, Arial, sans-serif;
+      background:var(--bg);
+      color:#111827;
+      line-height:1.45;
+    }
+
+    .container{
+      max-width:var(--max-width);
+      margin:32px auto;
+      padding:0 20px;
+    }
+
+    /* NAVIGATION */
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:var(--card);
+      padding:12px 0;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:48px; height:48px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#ff8fb5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      flex-shrink:0;
+    }
+
+    nav ul{
+      display:flex;
+      gap:12px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      flex-wrap:wrap;
+    }
+    nav a{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:10px;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+    }
+    nav a.active, nav a:hover{
+      background:rgba(0,0,0,0.06);
+      color:#111;
+    }
+
+    /* SECTION */
+    section h2{
+      font-size:28px;
+      margin-bottom:16px;
+    }
+
+    .grid{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .card{
+      flex:1;
+      min-width:240px;
+      background:var(--card);
+      padding:16px;
+      border-radius:var(--radius);
+      box-shadow:0 8px 24px rgba(15,23,42,0.04);
+      transition:0.3s;
+      margin-bottom:16px;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 30px rgba(15,23,42,0.08);
+    }
+    .card h3{ margin-top:0; }
+    .card p{ margin:8px 0 0; color:var(--muted); }
+
+    /* === PROJECT CARD WITH IMAGES === */
+    .project-card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      margin-bottom: 30px;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .project-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .project-images img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      margin-bottom: 14px;
+       text-align: justify;
+    }
+
+    .read-more {
+      display: inline-block;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--accent);
+    }
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .grid{flex-direction:column;}
+      .project-images{
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    footer{
+      text-align:center;
+      padding:20px 0;
+      font-size:14px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">YT</div>
+          <strong>Yogyata</strong>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a class="active" href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROJECTS SECTION -->
+  <section class="container">
+    <h2>College Projects</h2>
+
+   <!-- ⭐ NEW CUSTOM PROJECT CARD -->
+<div class="project-card">
+  <h3>1. Child Malnutrition Detection System Using CNN</h3>
+
+  <div class="project-images" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+    <img src="assets/images/child4.png" alt="Project Image 1" style="width:calc(25% - 7.5px); border-radius:8px;">
+    <img src="assets/images/child1.png" alt="Project Image 2" style="width:calc(25% - 7.5px); border-radius:8px;">
+    <img src="assets/images/child2.png" alt="Project Image 3" style="width:calc(25% - 7.5px); border-radius:8px;">
+    <img src="assets/images/child3.png" alt="Project Image 4" style="width:calc(25% - 7.5px); border-radius:8px;">
+  </div>
+
+  <div class="project-desc" id="desc">
+    <p>This project was developed as a part of the final year project to address child malnutrition 
+      through automated detection using image analysis. The system uses a Convolutional Neural Network
+      (CNN) to classify the nutritional status of children based on images. By analyzing visual 
+      features, the model can identify whether a child is Normal, Malnourished, or Over Malnourished.</p>
+
+    <p>A dataset of 4,000 images was collected from various sources, including Roboflow and other 
+      publicly available child malnutrition datasets. Data augmentation techniques such as rotation, 
+      zoom, and flipping were applied to improve the model’s accuracy and robustness.</p>
+
+    <p>The model was implemented using Python and TensorFlow/Keras, with OpenCV used for image 
+      preprocessing. The user interface (UI) was developed using Tkinter, allowing users to upload a 
+      child’s photo and receive a nutritional status prediction along with a confidence score.</p>
+
+    <h4>Why This Project Matters</h4>
+    <ul>
+      <li>Many communities don’t have easy access to proper health monitoring tools.</li>
+      <li>Malnutrition can be hard to detect early.</li>
+      <li>A simple image-based tool can support faster screening and help health workers take action sooner.</li>
+    </ul>
+
+    <h4>How It Works</h4>
+    <ol>
+      <li>Input Image: A photo of the child is uploaded.</li>
+      <li>Preprocessing: The image is resized, normalized, and cleaned for model input.</li>
+      <li>CNN Model: Extracts features from the face/body structure and classifies into categories: Normal, Malnourished, or Over Malnourished.</li>
+      <li>Output: Displays prediction with confidence level through the Tkinter-based interface.</li>
+    </ol>
+
+    <h4>Technologies Used</h4>
+    <ul>
+      <li>Python</li>
+      <li>TensorFlow / Keras</li>
+      <li>CNN architecture (custom CNN)</li>
+      <li>OpenCV for image preprocessing</li>
+      <li>Tkinter for user interface</li>
+    </ul>
+
+    <h4>Dataset</h4>
+    <ul>
+      <li>4,000 images collected from Roboflow and other publicly available datasets.</li>
+      <li>Data augmentation applied (rotation, zoom, flipping) to increase dataset diversity.</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>Early detection using images</li>
+      <li>User-friendly interface with Tkinter</li>
+      <li>Lightweight model suitable for desktop deployment</li>
+      <li>Accurate predictions after training</li>
+    </ul>
+
+    <h4>Possible Use Cases</h4>
+    <ul>
+      <li>Rural health checkups</li>
+      <li>NGOs and health workers</li>
+      <li>Mobile health apps</li>
+      <li>Community nutrition programs</li>
+    </ul>
+
+    <h4>Impact</h4>
+    <ul>
+      <li>Supports preventive healthcare and child well-being.</li>
+      <li>Assists healthcare workers and NGOs in making data-driven decisions.</li>
+      <li>Promotes awareness about child nutrition in communities.</li>
+    </ul>
+  </div>
+
+  <a href="javascript:void(0)" class="read-more" onclick="toggleReadMore()">Read More →</a>
+</div>
+
+<!-- ⭐ NEW CUSTOM PROJECT CARD -->
+<div class="project-card">
+  <h3>2. Oven House: Dynamic E-commerce Website</h3>
+
+  <div class="project-images" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+    <img src="assets/images/oven1.png" alt="Oven House Image 1" style="width:calc(25% - 7.5px); border-radius:8px;">
+    <img src="assets/images/oven2.png" alt="Oven House Image 2" style="width:calc(25% - 7.5px); border-radius:8px;">
+    <img src="assets/images/oven3.png" alt="Oven House Image 3" style="width:calc(25% - 7.5px); border-radius:8px;">
+    <img src="assets/images/oven4.png" alt="Oven House Image 4" style="width:calc(25% - 7.5px); border-radius:8px;">
+  </div>
+
+  <div class="project-desc" id="desc-oven">
+    <p>This college project was a dynamic web development assignment where we built an e-commerce website named "Oven House". The project was implemented using XAMPP as a local server, PHP for backend functionality, and MySQL for database management.</p>
+
+    <p>The website allows users to browse products, add items to the cart, and place orders. It includes user registration/login, product management, and dynamic content rendering from the database. The project demonstrates how dynamic websites can interact with data to provide an interactive shopping experience.</p>
+
+    <h4>Why This Project Matters</h4>
+    <ul>
+      <li>Introduces dynamic web concepts using PHP and MySQL.</li>
+      <li>Provides experience in building functional e-commerce platforms.</li>
+      <li>Helps understand database integration and server-side scripting.</li>
+    </ul>
+
+    <h4>How It Works</h4>
+    <ol>
+      <li>User Browsing: Products fetched dynamically from the database.</li>
+      <li>Add to Cart: Items are stored in session variables.</li>
+      <li>Checkout: Orders saved to MySQL database.</li>
+      <li>Admin Panel: Manage products, orders, and users dynamically.</li>
+    </ol>
+
+    <h4>Technologies Used</h4>
+    <ul>
+      <li>PHP for server-side scripting</li>
+      <li>MySQL for database management</li>
+      <li>XAMPP for local development</li>
+      <li>HTML, CSS, JavaScript for front-end</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>Dynamic content rendering</li>
+      <li>Database-driven e-commerce functionality</li>
+      <li>User authentication and management</li>
+      <li>Responsive UI design</li>
+    </ul>
+  </div>
+
+  <a href="javascript:void(0)" class="read-more" onclick="toggleReadMoreOven()">Read More →</a>
+</div>
+
+<script>
+function toggleReadMoreOven() {
+  const desc = document.getElementById('desc-oven');
+  const link = event.target;
+
+  desc.classList.toggle('expanded');
+
+  if(desc.classList.contains('expanded')){
+    link.textContent = 'Read Less ←';
+  } else {
+    link.textContent = 'Read More →';
+  }
+}
+</script>
+
+<!-- ⭐ NEW CUSTOM PROJECT CARD -->
+<div class="project-card">
+  <h3>3. IoT Smart Mirror</h3>
+
+  <div class="project-images" style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-bottom:16px;">
+    <img src="assets/images/mirror1.png" alt="Smart Mirror Image 1" style="width:42%; height:auto; border-radius:7 px;">
+    <img src="assets/images/mirror2.png" alt="Smart Mirror Image 2" style="width:42%; height:auto; border-radius:7 px;">
+  </div>
+
+
+  <div class="project-desc" id="desc-mirror">
+    <p style="text-align:justify;">
+      This project involved building a smart mirror prototype integrating IoT devices to create an interactive smart home experience. The mirror displays real-time weather updates, calendar events, and notifications directly on the mirror's surface.
+    </p>
+
+    <p style="text-align:justify;">
+      The hardware consists of a display behind a two-way mirror, sensors, and a microcontroller (e.g., Raspberry Pi or Arduino) connected to the home network. Software integration fetches data from APIs and updates the mirror interface dynamically.
+    </p>
+
+    <h4>Why This Project Matters</h4>
+    <ul>
+      <li>Introduces IoT integration with consumer devices.</li>
+      <li>Demonstrates real-time data display and interactive interfaces.</li>
+      <li>Combines software and hardware knowledge for smart home solutions.</li>
+    </ul>
+
+    <h4>How It Works</h4>
+    <ol>
+      <li><strong>Display:</strong> Two-way mirror with embedded monitor shows data.</li>
+      <li><strong>IoT Integration:</strong> Connected to sensors and APIs for live updates.</li>
+      <li><strong>Data Display:</strong> Shows weather, calendar events, and notifications.</li>
+      <li><strong>Interactive Features:</strong> Supports touch or gesture controls (optional).</li>
+    </ol>
+
+    <h4>Technologies Used</h4>
+    <ul>
+      <li>Raspberry Pi / Arduino</li>
+      <li>Python / Node.js</li>
+      <li>APIs for weather and calendar</li>
+      <li>Display and sensors for smart mirror</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>Real-time information on mirror surface</li>
+      <li>IoT-enabled smart home integration</li>
+      <li>Customizable dashboard</li>
+      <li>Interactive user experience</li>
+    </ul>
+  </div>
+
+  <a href="javascript:void(0)" class="read-more" onclick="toggleReadMoreMirror()">Read More →</a>
+</div>
+
+<script>
+function toggleReadMoreMirror() {
+  const desc = document.getElementById('desc-mirror');
+  const link = event.target;
+
+  desc.classList.toggle('expanded');
+
+  if(desc.classList.contains('expanded')){
+    link.textContent = 'Read Less ←';
+  } else {
+    link.textContent = 'Read More →';
+  }
+}
+</script>
+
+<!-- ⭐ Graphic Design Project Card -->
+<div class="project-card" style="background:white; padding:20px; border-radius:12px; margin-bottom:30px;">
+  <h3>4. Graphic Design Work</h3>
+
+  <div class="project-images" style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-bottom:16px;">
+    <img src="assets/images/banner1.png" alt="Banner Design 1" style="width:30%; height:auto; border-radius:10px;">
+    <img src="assets/images/bd3.png" alt="Poster Design 1" style="width:30%; height:auto; border-radius:10px;">
+    <img src="assets/images/bd4.png" alt="Certificate Design 1" style="width:30%; height:auto; border-radius:10px;">
+  </div>
+
+  <div class="project-desc" id="desc-graphic">
+    <p style="text-align:justify;">
+      This project showcases my graphic design work created for various college projects and events. I have designed "banners, posters, and certificates" using Photoshop, Canva, and Illustrator. Each design demonstrates creativity, attention to detail, and a focus on visual communication.
+    </p>
+
+    <h4>Why This Project Matters</h4>
+    <ul>
+      <li>Develops creativity and design skills.</li>
+      <li>Helps communicate messages effectively through visual media.</li>
+      <li>Supports college events, projects, and presentations with professional visuals.</li>
+    </ul>
+
+    <h4>Tools & Techniques Used</h4>
+    <ul>
+      <li>Adobe Photoshop for image editing and composition</li>
+      <li>Adobe Illustrator for vector graphics and icons</li>
+      <li>Canva for quick and versatile design templates</li>
+      <li>Typography, color theory, and layout principles</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>High-quality banners and posters</li>
+      <li>Professional certificates for events and projects</li>
+      <li>Creative use of typography and graphics</li>
+      <li>Portfolio-ready design samples</li>
+    </ul>
+  </div>
+
+  <a href="javascript:void(0)" class="read-more" onclick="toggleReadMoreGraphic()">Read More →</a>
+</div>
+
+<!-- ⭐ Blood Donation Campaign Project Card -->
+<div class="project-card" style="background:white; padding:20px; border-radius:12px; margin-bottom:30px;">
+  <h3>4. Blood Donation Campaigns (3CC Social Work)</h3>
+
+  <div class="project-images" style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-bottom:16px;">
+    <img src="assets/images/blood1.png" alt="Campaign Photo 1" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/blood2.png" alt="Campaign Photo 2" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/blood3.png" alt="Campaign Photo 3" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/blood4.png" alt="Campaign Photo 4" style="width:23%; height:auto; border-radius:10px;">
+  </div>
+
+  <div class="project-desc" id="desc-blood">
+    <p style="text-align:justify;">
+      We organized blood donation campaigns in collaboration with Grande Hospital as part of our 3CC social work initiative. Through careful planning, outreach, and volunteer coordination, we were able to successfully collect <strong>72 blood packets</strong>, helping the local community and promoting health awareness.
+    </p>
+
+    <h4>Why This Project Matters</h4>
+    <ul>
+      <li>Supports local hospitals with much-needed blood supply.</li>
+      <li>Promotes social responsibility and community service among students.</li>
+      <li>Encourages awareness about the importance of blood donation.</li>
+    </ul>
+
+    <h4>Key Highlights</h4>
+    <ul>
+      <li>Organized in collaboration with Grande Hospital.</li>
+      <li>Active student participation and volunteer coordination.</li>
+      <li>72 blood packets collected successfully.</li>
+      <li>Documented through photos for portfolio and records.</li>
+    </ul>
+  </div>
+
+  <a href="javascript:void(0)" class="read-more" onclick="toggleReadMoreBlood()">Read More →</a>
+</div>
+
+<script>
+function toggleReadMoreBlood() {
+  const desc = document.getElementById('desc-blood');
+  const link = event.target;
+  desc.classList.toggle('expanded');
+  if(desc.classList.contains('expanded')){
+    link.textContent = 'Read Less ←';
+  } else {
+    link.textContent = 'Read More →';
+  }
+}
+</script>
+
+
+<script>
+function toggleReadMoreGraphic() {
+  const desc = document.getElementById('desc-graphic');
+  const link = event.target;
+  desc.classList.toggle('expanded');
+  if(desc.classList.contains('expanded')){
+    link.textContent = 'Read Less ←';
+  } else {
+    link.textContent = 'Read More →';
+  }
+}
+</script>
+
+<!-- ⭐ Cyber Security Awareness Program Project Card -->
+<div class="project-card" style="background:white; padding:20px; border-radius:12px; margin-bottom:30px;">
+  <h3>4. Cyber Security Awareness Program (3CC Education)</h3>
+
+  <div class="project-images" style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-bottom:16px;">
+    <img src="assets/images/cyber4.jpg" alt="Program Photo 1" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/cyber2.jpg" alt="Program Photo 2" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/cyber3.jpg" alt="Program Photo 3" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/cyber1.jpg" alt="Program Photo 4" style="width:23%; height:auto; border-radius:10px;">
+  </div>
+
+  <div class="project-desc" id="desc-cyber">
+    <p style="text-align:justify;">
+      Organized a Cyber Security Awareness Program as part of 3CC (Education) at Shree Jalapa Secondary School, Dhapakhel, Lalitpur. The program aimed to educate students about safe internet practices, digital hygiene, and protecting personal information online. Interactive sessions and real-life examples were used to make students understand potential risks and preventive measures.
+    </p>
+
+    <h4>Why This Project Matters</h4>
+    <ul>
+      <li>Raises awareness about online safety among young students.</li>
+      <li>Helps prevent cyberbullying, phishing, and unsafe online behavior.</li>
+      <li>Encourages responsible and informed use of technology.</li>
+    </ul>
+
+    <h4>Key Highlights</h4>
+    <ul>
+      <li>Conducted workshops and interactive demonstrations.</li>
+      <li>Students learned about passwords, social media safety, and cyber threats.</li>
+      <li>Positive feedback from teachers and students.</li>
+      
+    </ul>
+  </div>
+
+  <a href="javascript:void(0)" class="read-more" onclick="toggleReadMoreCyber()">Read More →</a>
+</div>
+
+<script>
+function toggleReadMoreCyber() {
+  const desc = document.getElementById('desc-cyber');
+  const link = event.target;
+  desc.classList.toggle('expanded');
+  if(desc.classList.contains('expanded')){
+    link.textContent = 'Read Less ←';
+  } else {
+    link.textContent = 'Read More →';
+  }
+}
+</script>
+
+<div class="project-card" style="background:white; padding:20px; border-radius:12px; margin-bottom:30px;">
+  <h3>5. Travel Loom: Travel Agency Website</h3>
+
+  <div class="project-images" style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-bottom:16px;">
+    <img src="assets/images/travelloom1.png" alt="Travel Loom Screenshot 1" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/travelloom2.png" alt="Travel Loom Screenshot 2" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/travelloom3.png" alt="Travel Loom Screenshot 3" style="width:23%; height:auto; border-radius:10px;">
+    <img src="assets/images/travelloom4.png" alt="Travel Loom Screenshot 4" style="width:23%; height:auto; border-radius:10px;">
+  </div>
+
+  <div class="project-desc" id="desc-travelloom">
+    <p style="text-align:justify;">
+      Travel Loom is a dynamic travel agency website created using WordPress and Elementor Pro as a 
+      practice project. The website features dynamic content, a blog section, and SEO-optimized 
+      pages. It showcases tours, packages, and travel information, providing a professional and interactive experience for users. The project allowed hands-on learning of WordPress, Elementor Pro, SEO management, and dynamic website development.
+    </p>
+
+    <h4>Why This Project Matters</h4>
+    <ul>
+      <li>Practiced creating dynamic websites using WordPress and Elementor Pro.</li>
+      <li>Maintained SEO standards and wrote blogs for content engagement.</li>
+      <li>Improved skills in designing user-friendly and interactive web pages.</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>Dynamic pages showcasing travel packages and tours.</li>
+      <li>SEO optimization for better visibility.</li>
+      <li>Blog section with engaging travel articles.</li>
+      <li>Responsive and interactive design using Elementor Pro.</li>
+    </ul>
+
+    <h4>Technologies Used</h4>
+    <ul>
+      <li>WordPress</li>
+      <li>Elementor Pro</li>
+      <li>LocalWP (Local Development)</li>
+      <li>SEO Best Practices</li>
+    </ul>
+  </div>
+
+  <a href="javascript:void(0)" class="read-more" onclick="toggleReadMoreTravel()">Read More →</a>
+</div>
+
+<script>
+function toggleReadMoreTravel() {
+  const desc = document.getElementById('desc-travelloom');
+  const link = event.target;
+  desc.classList.toggle('expanded');
+  if(desc.classList.contains('expanded')){
+    link.textContent = 'Read Less ←';
+  } else {
+    link.textContent = 'Read More →';
+  }
+}
+</script>
+
+
+
+<footer>
+      © <span id="year"></span> Yogyata Thapa • <span style="color:var(--muted)">Portfolio</span>
+    </footer>
+
+
+<style>
+.project-card {
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+  margin-bottom:24px;
+}
+
+.project-desc {
+  color:#111827;
+  text-align:justify;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:8; /* initially show 8 lines */
+  -webkit-box-orient:vertical;
+  margin-bottom:12px;
+}
+
+.project-desc.expanded {
+  -webkit-line-clamp:unset;
+}
+
+.project-desc h4 {
+  margin-top:12px;
+  color:#1f2937;
+}
+
+.project-desc ul, .project-desc ol {
+  margin-left:20px;
+  margin-bottom:10px;
+}
+
+.read-more {
+  display:inline-block;
+  font-weight:600;
+  color:#6366f1;
+  cursor:pointer;
+  text-decoration:none;
+}
+.read-more:hover {
+  text-decoration:underline;
+}
+</style>
+
+<script>
+function toggleReadMore() {
+  const desc = document.getElementById('desc');
+  const link = event.target;
+
+  desc.classList.toggle('expanded');
+
+  if(desc.classList.contains('expanded')){
+    link.textContent = 'Read Less ←';
+  } else {
+    link.textContent = 'Read More →';
+  }
+}
+</script>

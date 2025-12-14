@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yogyata Thapa — Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    :root{
+      --bg:#f7f7fb;
+      --card:#ffffff;
+      --accent:#eaada4; /* pinkish */
+      --muted:#030303;
+      --greyish:#e6e9ee;
+      --max-width:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, Arial, sans-serif;
+      background:var(--bg);
+      color:#111827;
+      line-height:1.45;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:32px auto;
+      padding:0 20px;
+    }
+
+    /* NAV */
+    header{
+      position:sticky;top:0;z-index:100;
+      background:var(--card);
+      padding:12px 0;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#ff8fb5);
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;
+      flex-shrink:0;
+    }
+    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+    nav a{
+      display:inline-block;padding:8px 12px;border-radius:10px;
+      text-decoration:none;color:var(--muted);font-weight:600;
+    }
+    nav a.active, nav a:hover{
+      background:rgba(0,0,0,0.06);color:#111;
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:32px;
+      align-items:center;
+      margin-top:22px;
+    }
+    .hero-card{
+      background:var(--card);
+      padding:26px;
+      border-radius:var(--radius);
+      box-shadow:0 6px 20px rgba(16,24,40,0.06);
+    }
+    .hero h1{
+      margin:0 0 8px;
+      font-size:28px;
+    }
+    .hero p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:10px 16px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:rgb(248, 237, 237);
+    }
+    .btn-ghost{
+      background:var(--accent);
+      border:1px solid rgba(0,0,0,0.06);
+  
+      color:rgb(248, 237, 237);
+    }
+
+    .hero-img{
+      width:100%;
+      border-radius:var(--radius);
+      box-shadow:0 4px 14px rgba(0,0,0,0.08);
+      object-fit:cover;
+    }
+    footer{margin:28px 0 60px;color:var(--muted);text-align:center}
+
+
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr;}
+      .hero-img{width:100%; margin-top:20px;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">YT</div>
+          <strong>Yogyata</strong>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="container">
+    <section class="hero">
+      <!-- TEXT LEFT -->
+      <div class="hero-card">
+        <h1>Hi, I'm <span style="color:var(--accent);">Yogyata Thapa</span></h1>
+        <p><strong>BIT Student | Graphic Design | Digital Marketing | Web Tools</strong></p>
+        <p>
+          BIT student with a strong interest in IT, web design,
+          digital marketing, and creative problem-solving.
+          I enjoy learning new tools and building projects
+          that blend tech with creativity.
+        </p>
+        <div class="cta">
+          <a href="skills.html" class="btn btn-primary">View Skills</a>
+          <a href="projects.html" class="btn btn-ghost">View Projects</a>
+          <a href="contact.html" class="btn btn-ghost">Contact Me</a>
+        </div>
+      </div>
+
+      <!-- IMAGE RIGHT -->
+      <img src="assets/images/profile.png" class="hero-img" alt="Yogyata">
+    </section>
+  </div>
+
+</body>
+
+<footer>
+      © <span id="year"></span> Yogyata Thapa • <span style="color:var(--muted)">Portfolio</span>
+    </footer>
+</html>

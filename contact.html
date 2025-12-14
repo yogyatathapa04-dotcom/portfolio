@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Yogyata</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f7fb;
+      --card:#ffffff;
+      --accent:#eaada4; 
+      --muted:#030303;
+      --greyish:#e6e9ee;
+      --max-width:1100px;
+      --radius:12px;
+    }
+
+    *{box-sizing:border-box;}
+    html, body{height:100%; margin:0; font-family:Inter, system-ui, Arial, sans-serif; background:var(--bg); color:#111827; line-height:1.45;}
+
+    .container{
+      max-width:var(--max-width);
+      margin:32px auto;
+      padding:0 20px;
+    }
+
+    /* NAVIGATION */
+    header{
+      position:sticky; top:0; z-index:100;
+      background:var(--card);
+      padding:12px 0;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#ff8fb5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      flex-shrink:0;
+    }
+    nav ul{
+      display:flex;
+      gap:12px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      flex-wrap:wrap;
+    }
+    nav a{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:10px;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+    }
+    nav a.active, nav a:hover{
+      background:rgba(0,0,0,0.06);
+      color:#111;
+    }
+
+    /* CONTACT SECTION */
+    section h2{
+      font-size:28px;
+      margin-bottom:16px;
+    }
+
+    .flex-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-top:16px;
+    }
+    .card{
+      flex:1;
+      min-width:300px;
+      background:var(--card);
+      padding:20px;
+      border-radius:var(--radius);
+      box-shadow:0 8px 24px rgba(15,23,42,0.04);
+      transition:0.3s;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 30px rgba(15,23,42,0.08);
+    }
+    .card h3{
+      margin-top:0;
+      margin-bottom:12px;
+    }
+    .card p, .card li{
+      margin-bottom:8px;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .card ul{
+      padding-left:18px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px 0;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    @media(max-width:768px){
+      .flex-grid{flex-direction:column;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">YT</div>
+          <strong>Yogyata</strong>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="container">
+    <h2>Contact & Details</h2>
+    <div class="flex-grid">
+      <div class="card">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> yogyatathapa04@gmail.com</p>
+        <p><strong>Phone:</strong> +977-9841285534</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yogyata-thapa/" target="_blank">View Profile</a></p>
+        <p><strong>Social Media:</strong> Facebook | Instagram</p>
+      </div>
+
+      <div class="card">
+        <h3>Future Goals & Fun Facts</h3>
+        <ul>
+          <li>Learn advanced QA and testing tools</li>
+          <li>Improve web designing skills</li>
+          <li>Gain IT internship experience</li>
+          <li>Explore UI/UX basics</li>
+          <li>Build a stronger digital marketing portfolio</li>
+        </ul>
+        <p>Fun Facts: I prefer creative work but enjoy learning tech. I like making visual content and trying new tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+      © <span id="year"></span> Yogyata Thapa • <span style="color:var(--muted)">Portfolio</span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

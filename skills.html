@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Yogyata</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f7fb;
+      --card:#ffffff;
+      --accent:#eaada4; /* pinkish */
+      --muted:#030303;
+      --greyish:#e6e9ee;
+      --max-width:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, Arial, sans-serif;
+      background:var(--bg);
+      color:#111827;
+      line-height:1.45;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:32px auto;
+      padding:0 20px;
+    }
+
+    /* NAVIGATION (same as index.html) */
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:var(--card);
+      padding:12px 0;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#ff8fb5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      flex-shrink:0;
+    }
+    nav ul{
+      display:flex;
+      gap:12px;
+      list-style:none;
+      margin:0;
+      padding:0;
+      flex-wrap:wrap;
+    }
+    nav a{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:10px;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+    }
+    nav a.active, nav a:hover{
+      background:rgba(0,0,0,0.06);
+      color:#111;
+    }
+
+    /* SKILLS SECTION */
+    section h2{
+      font-size:24px;
+      margin-bottom:6px;
+    }
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+    .skill{
+      background:var(--card);
+      padding:16px;
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(16,24,40,0.04);
+      transition:0.3s;
+    }
+    .skill:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 25px rgba(16,24,40,0.08);
+    }
+    .skill h4{
+      margin:0 0 6px;
+      font-size:16px;
+    }
+    .skill p{
+      margin:0;
+      color:#555;
+      font-size:14px;
+    }
+     footer{margin:28px 0 60px;color:var(--muted);text-align:center}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .skills-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:480px){
+      .skills-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">YT</div>
+          <strong>Yogyata</strong>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- SKILLS SECTION -->
+  <section class="container">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <h4>IT/Web</h4>
+        <p>Basic HTML, CSS, JavaScript, Basic Python, Git, WordPress</p>
+      </div>
+      <div class="skill">
+        <h4>Graphic Design</h4>
+        <p>Canva, Photoshop, Illustrator, InDesign</p>
+      </div>
+      <div class="skill">
+        <h4>Digital Marketing</h4>
+        <p>Social Media Management, Content Creation, SEO Basics</p>
+      </div>
+      <div class="skill">
+        <h4>Content Writing</h4>
+        <p>Blogs, Captions, Scripts</p>
+      </div>
+      <div class="skill">
+        <h4>UI Layout Planning</h4>
+        <p>Wireframing, Prototyping</p>
+      </div>
+      <div class="skill">
+        <h4>Soft Skills</h4>
+        <p>Creativity, Communication, Problem Solving</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+<footer>
+      © <span id="year"></span> Yogyata Thapa • <span style="color:var(--muted)">Portfolio</span>
+    </footer>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Yogyata Thapa</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<style>
+  :root{
+    --bg:#f7f7fb;
+    --card:#ffffff;
+    --accent:#eaada4; /* pinkish */
+    --muted:#030303;
+    --greyish:#e6e9ee;
+    --max-width:1100px;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter, system-ui, Arial, sans-serif;
+    background:var(--bg);
+    color:#111827;
+    line-height:1.45;
+  }
+  .container{
+    max-width:var(--max-width);
+    margin:32px auto;
+    padding:0 20px;
+  }
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--card);
+    padding:12px 0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:48px;height:48px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent),#ff8fb5);
+    display:flex;align-items:center;justify-content:center;
+    color:white;font-weight:700;
+    flex-shrink:0;
+  }
+  nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+  nav a{
+    display:inline-block;padding:8px 12px;border-radius:10px;
+    text-decoration:none;color:var(--muted);font-weight:600;
+  }
+  nav a.active, nav a:hover{
+    background:rgba(0,0,0,0.06);color:#111;
+  }
+
+  /* Section */
+  section h2{margin-bottom:8px; font-size:28px;}
+  section h5{margin-bottom:12px; color:#6b7280;}
+  section p{margin-bottom:16px; color:#6b7280;}
+
+  /* Gallery Grid */
+  .gallery{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:12px;
+  }
+  .gallery div{
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+    min-height:150px;
+    transition: transform 0.3s ease;
+  }
+  .gallery div img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .gallery div:hover{ transform: scale(1.03); }
+
+  footer{margin:28px 0 60px;color:var(--muted);text-align:center}
+
+
+  /* Responsive */
+  @media(max-width:600px){
+    .gallery{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">YT</div>
+        <strong>Yogyata</strong>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a class="active" href="gallery.html">Gallery</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Gallery Section -->
+<div class="container">
+  <section>
+    <h2>Graphic Design Gallery</h2>
+    <h5>Design & Branding</h5>
+    <p>Poster, social media graphics, and visual assets created for small campaigns and class projects.</p>
+
+    <div class="gallery">
+      <div><img src="assets/images/c1.png" alt="c1"></div>
+      <div><img src="assets/images/c2.png" alt="c2"></div>
+      <div><img src="assets/images/c3.png" alt="c3"></div>
+      <div><img src="assets/images/c4.png" alt="c4"></div>
+      <div><img src="assets/images/co1.png" alt="co1"></div>
+      <div><img src="assets/images/co2.png" alt="co2"></div>
+      <div><img src="assets/images/co3.png" alt="co3"></div>
+      <div><img src="assets/images/co4.png" alt="co4"></div>
+      <div><img src="assets/images/bo1.png" alt="bo1"></div>
+      <div><img src="assets/images/bo2.png" alt="bo2"></div>
+      <div><img src="assets/images/rare1.png" alt="rare1"></div>
+      <div><img src="assets/images/rhode2.png" alt="rhode2"></div>
+      <div><img src="assets/images/bag.png" alt="bag"></div>
+      <div><img src="assets/images/wc.png" alt="wc"></div>
+      <div><img src="assets/images/logo1.png" alt="logo1"></div>
+      <div><img src="assets/images/logo2.png" alt="logo2"></div>
+      <div><img src="assets/images/bd1.png" alt="bd1"></div>
+      <div><img src="assets/images/bd2.png" alt="bd2"></div>
+      <div><img src="assets/images/bd3.png" alt="bd3"></div>
+      <div><img src="assets/images/hauslab.png" alt="hauslab"></div>
+      <div><img src="assets/images/sg.png" alt="sg"></div>
+      <div><img src="assets/images/wknd.png" alt="wknd"></div>
+        <div><img src="assets/images/baltra1.png" alt="baltra1"></div>
+      <div><img src="assets/images/baltra2.png" alt="baltra2"></div>
+    </div>
+  </section>
+</div>
+
+</body>
+
+
+  <footer>
+      © <span id="year"></span> Yogyata Thapa • <span style="color:var(--muted)">Portfolio</span>
+    </footer>
+
+
+</html>
